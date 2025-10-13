@@ -5,11 +5,31 @@
   "parts": [
     { "type": "wokwi-breadboard", "id": "bb1", "top": -195, "left": 31.6, "attrs": {} },
     { "type": "wokwi-arduino-uno", "id": "uno", "top": 48.6, "left": -39, "attrs": {} },
-    { "type": "wokwi-lcd1602", "id": "lcd1", "top": -207.77, "left": 25.6, "attrs": {} }
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd1",
+      "top": -207.77,
+      "left": 25.6,
+      "attrs": { "background": "blue", "color": "white" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": 35,
+      "left": 297.6,
+      "attrs": { "color": "black", "xray": "1" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 51.95,
+      "left": 451.2,
+      "attrs": { "value": "10000" }
+    }
   ],
   "connections": [
     [ "uno:GND.1", "bb1:bn.5", "black", [ "h0.3", "v-38.4", "h39.2" ] ],
-    [ "uno:5V", "bb1:bp.31", "red", [ "v28.7", "h243.8", "v-268.8" ] ],
+    [ "uno:5V", "bb1:bp.31", "red", [ "v28.7", "h301.4", "v-277.5" ] ],
     [ "bb1:bn.1", "bb1:1b.j", "black", [ "v-30.1", "h-20" ] ],
     [ "bb1:bp.2", "bb1:2b.j", "red", [ "v-10.5", "h-20" ] ],
     [ "uno:12", "bb1:4b.j", "orange", [ "v-86.4", "h-9.1" ] ],
@@ -17,6 +37,11 @@
     [ "uno:9", "bb1:12b.j", "gray", [ "v-76.8", "h10.4" ] ],
     [ "uno:8", "bb1:13b.j", "gray", [ "v-38.4", "h38.8" ] ],
     [ "uno:7", "bb1:14b.j", "gray", [ "v-28.8", "h3.6" ] ],
+    [ "bb1:bn.12", "bb1:16b.j", "black", [ "v0" ] ],
+    [ "bb1:5b.j", "bb1:bn.4", "black", [ "v9.6", "h9.6" ] ],
+    [ "bb1:6b.j", "uno:11", "violet", [ "v0" ] ],
+    [ "bb1:bp.20", "btn1:1.l", "red", [ "v0" ] ],
+    [ "btn1:2.l", "uno:6", "#8f4814", [ "h-67.2", "v-28.6", "h-67.2" ] ],
     [ "lcd1:VSS", "bb1:1b.f", "", [ "$bb" ] ],
     [ "lcd1:VDD", "bb1:2b.f", "", [ "$bb" ] ],
     [ "lcd1:V0", "bb1:3b.f", "", [ "$bb" ] ],
@@ -33,9 +58,8 @@
     [ "lcd1:D7", "bb1:14b.f", "", [ "$bb" ] ],
     [ "lcd1:A", "bb1:15b.f", "", [ "$bb" ] ],
     [ "lcd1:K", "bb1:16b.f", "", [ "$bb" ] ],
-    [ "bb1:bn.12", "bb1:16b.j", "black", [ "v0" ] ],
-    [ "bb1:5b.j", "bb1:bn.4", "black", [ "v9.6", "h9.6" ] ],
-    [ "bb1:6b.j", "uno:11", "violet", [ "v0" ] ]
+    [ "btn1:2.r", "r1:1", "black", [ "h0" ] ],
+    [ "r1:2", "bb1:bn.39", "black", [ "v0" ] ]
   ],
   "dependencies": {}
 }
