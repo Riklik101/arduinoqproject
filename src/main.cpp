@@ -1,3 +1,6 @@
+
+
+
 #include <Arduino.h>
 #include <LiquidCrystal.h>
 
@@ -5,7 +8,7 @@ LiquidCrystal lcd(12,11,10,9,8,7);
 const int clearPin = 6;
 char serialInput;
 // put function declarations here:
-int myFunction(int, int);
+// int myFunction(int, int);
 
 void setup() {
   Serial.begin(9600);
@@ -19,11 +22,12 @@ void loop() {
     lcd.write(serialInput);
     Serial.println("Character(s) written to LCD");
   } else if (digitalRead(clearPin)==HIGH) {
+    Serial.println("Display Reset!");
     lcd.clear();
   }
 }
 
 // put function definitions here:
-int myFunction(int x, int y) {
+/*int myFunction(int x, int y) {
   return x + y;
-}
+}*/
