@@ -1,5 +1,5 @@
 # Todo
-- [ ] new line instead of overflow on display
+- [x] new line instead of overflow on display
 - [ ] Enter key on keyboard to have new line
 - [ ] backspace support
 - [ ] Arrow key support
